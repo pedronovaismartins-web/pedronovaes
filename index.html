@@ -1,34 +1,72 @@
-<style>
-  body {
-    margin: 0;
-    background: #000;
-  }
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acompanhamento de Obra</title>
 
-  .swiper {
-    width: 100%;
-    height: calc(100vw * 3 / 4); /* 4:3 responsivo */
-    max-height: 600px; /* segurança no desktop */
-    background: #000;
-    overflow: hidden;
-  }
+  <!-- Swiper CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+  />
 
-  .swiper-slide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .swiper-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* elimina barras pretas */
-  }
-
-  /* Ajuste fino só para mobile */
-  @media (max-width: 768px) {
-    .swiper {
-      height: calc(100vw * 3 / 4);
-      max-height: none;
+  <style>
+    body {
+      margin: 0;
+      background: #000;
     }
-  }
-</style>
+
+    .swiper {
+      width: 100%;
+    }
+
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: auto; /* 🔑 ESSENCIAL */
+      display: block;
+      object-fit: contain; /* mantém 4:3 sem cortar */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="swiper">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide">
+        <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471">
+      </div>
+
+      <div class="swiper-slide">
+        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994">
+      </div>
+
+      <div class="swiper-slide">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+      </div>
+
+    </div>
+
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    new Swiper('.swiper', {
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+  </script>
+
+</body>
+</html>
