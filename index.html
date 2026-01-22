@@ -19,13 +19,21 @@
 
     .swiper {
       width: 100%;
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 4 / 3; /* AJUSTE CRÍTICO */
+      background: #000;
+      overflow: hidden;
+    }
+
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .swiper-slide img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain; /* NÃO CORTA A OBRA */
     }
   </style>
 </head>
@@ -59,8 +67,3 @@
       pagination: {
         el: '.swiper-pagination',
       },
-    });
-  </script>
-
-</body>
-</html>
